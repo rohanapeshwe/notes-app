@@ -14,7 +14,7 @@ export type ItemProps = {
 const Item = ({ text, isChecked, onHandleChange }: ItemProps) => {
   return (
     <li
-      className="inline-flex items-center justify-start w-64 p-2 list-none border-2 border-stone-500"
+      className="inline-flex items-center justify-start w-64 p-2 list-none border-2 bg-stone-300 border-stone-500"
       role="listitem"
     >
       <input
