@@ -13,7 +13,10 @@ export type ItemProps = {
 
 const Item = ({ text, isChecked, onHandleChange }: ItemProps) => {
   return (
-    <li className="w-64 p-2 list-none border-2 border-stone-500" role="listitem">
+    <li
+      className="inline-flex items-center justify-start w-64 p-2 list-none border-2 border-stone-500"
+      role="listitem"
+    >
       <input
         type="checkbox"
         name={text}
@@ -26,7 +29,7 @@ const Item = ({ text, isChecked, onHandleChange }: ItemProps) => {
           })
         }}
       />
-      <label className={`truncate ${isChecked && 'line-through'}`} htmlFor={`${text}-id`}>
+      <label className="ml-2 truncate" htmlFor={`${text}-id`}>
         {text}
       </label>
     </li>
