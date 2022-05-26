@@ -34,8 +34,13 @@ export const reducer = (state: State = initialState, action: Action) => {
       break
 
     case actions.ITEM_UPDATE: {
+      const itemAt = state.items.findIndex((item) => item.text === action.payload.text)
+      if (itemAt >= 0) {
+        state.items[itemAt].isChecked = action.payload.isChecked
+      }
+
       return {
-        items: [...state.items.filter((item) => item.text !== action.payload.text), action.payload],
+        items: [...state.items],
       }
       break
     }
